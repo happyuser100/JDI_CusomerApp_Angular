@@ -1,0 +1,63 @@
+<div class="container">
+
+  <div class="row mt-1 mb-1 pt-1 pb-1">
+    <div class="col-md-12">
+      <h2 class="text-left">Customer List</h2>
+    </div>
+  </div>
+  <div class="row mt-1 mb-1 pt-1 pb-1">
+    <div class="col-md-12">
+      <button (click)="addCustomer()" style="font-size:16px">
+        <i class="fa fa-plus" title="add customer"></i>
+      </button>
+    </div>
+  </div>
+  <div *ngFor="let customerItem of customers">
+    <div class="row mt-1 mb-1 pt-1 pb-1 border-primary">
+      <div (click)="showdetails(customerItem.id)" class="col-md-4">
+        <img src="{{customerItem.imageUrl}}" alt="">
+      </div>
+      <div class="col-md-3">
+        <div>
+          <span class="text-muted font-weight-bold">First Name:</span>
+          <span class="text-muted font-weight-bold">{{customerItem.firstName}}</span>
+        </div>
+        <div>
+          <span class="text-muted font-weight-bold">Last Name:</span>
+          <span class="text-muted font-weight-bold">{{customerItem.lastName}}</span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div>
+          <span class="text-muted font-weight-bold">Phone:</span>
+          <span class="text-muted font-weight-bold">{{customerItem.phone}}</span>
+        </div>
+        <div>
+          <span class="text-muted font-weight-bold">Email:</span>
+          <span class="text-muted font-weight-bold">{{customerItem.email}}</span>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="pr-1 float-left">
+          <button (click)="showdetails(customerItem.id)" style="font-size:16px">
+            <i class="fa fa-info" title="orders by customer"></i></button>
+        </div>
+
+        <div class="pr-1 float-left">
+          <button (click)="editCustomer(customerItem)" style="font-size:16px">
+            <i class="fa fa-edit" title="edit customer"></i>
+          </button>
+        </div>
+        <div class="pr-1 float-left">
+          <button (click)="deleteCustomer(customerItem)" style="font-size:16px">
+            <i class="fa fa-trash" title="delete customer"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
+</div>

@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h2 class="text-left">Edit Customer</h2>
+      <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div class="hidden">
+          <input type="hidden" formControlName="id" placeholder="id" name="id" class="form-control" id="id">
+        </div>
+
+        <div class="form-group">
+          <span class='red'>*</span>
+          <label for="firstName">First Name:</label>
+          <input required formControlName="firstName" placeholder="First Name" name="firstName" class="form-control" id="firstName">
+        </div>
+
+        <div class="form-group">
+            <span class='red'>*</span>
+          <label for="lastName">Last Name:</label>
+          <input required formControlName="lastName" placeholder="Last name" name="lastName" class="form-control" id="lastName">
+        </div>
+
+        <div class="form-group">
+            <span class='red'>*</span>
+          <label for="phone">Phone:</label>
+          <input required type="tel" formControlName="phone" placeholder="phone" name="phone" class="form-control" id="phone">
+        </div>
+
+        <div class="form-group">
+            <span class='red'>*</span>
+          <label for="email">Email:</label>
+          <input required type="email" formControlName="email" placeholder="email" name="email" class="form-control" id="email">
+        </div>
+
+        <div class="form-group">
+            <span class='red'>*</span>
+          <label for="imageUrl">Image Url:</label>
+          <input required type="url" formControlName="imageUrl" placeholder="Image Url" name="imageUrl" class="form-control" id="imageUrl">
+        </div>
+
+        <button [disabled]="editForm.invalid" class="btn btn-success">Update</button>
+      </form>
+    </div>
+
+  </div>
+</div>
